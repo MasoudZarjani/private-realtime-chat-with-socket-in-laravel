@@ -13,6 +13,7 @@ var app = new Vue({
         },
         bArr: {}
     },
+    
     methods: {
         chat: function(chat){
             if(!this.chatBox.includes(chat.id)){
