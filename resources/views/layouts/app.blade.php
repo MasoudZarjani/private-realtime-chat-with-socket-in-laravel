@@ -10,7 +10,7 @@
     <meta name="ws_url" content="{{ env('WS_URL') }}">
     <meta name="user_id" content="{{ Auth::id() }}">
 
-    <title>Realtime Private Chat</title>
+    <title>Chat</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

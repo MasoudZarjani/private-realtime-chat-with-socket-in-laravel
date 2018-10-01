@@ -18,7 +18,7 @@
         width:260px;
         padding: 5px;
         position: fixed;
-        bottom: 0px;
+        /* bottom: 0px; */
     }
     </style>
 @stop
@@ -27,14 +27,14 @@
         <div class="row">
             <div class="col-md-2" id="chatApp">
                 <div class="panel panel-default ffside">
-                    <div class="panel-heading">Users</div>
+                    <div class="panel-heading text-right">کاربران</div>
                     <div class="panel-body" style="padding:0px;">
                         <ul class="list-group">
-                            <li class="list-group-item" 
+                            <li class="list-group-item text-right" 
                                 v-for="chatList in chatLists" 
                                 style="cursor: pointer;" @click="chat(chatList)">
                                     @{{ chatList.name }}  
-                                    <i class="fa fa-circle pull-right" 
+                                    <i class="fa fa-circle pull-left" 
                                         v-bind:class="{'online': (chatList.online=='Y')}"></i>
                                     <span class="badge" v-if="chatList.msgCount !=0">
                                         @{{ chatList.msgCount }}

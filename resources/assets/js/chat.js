@@ -143,7 +143,7 @@ var chatbox = {
                 }
             }else{
                 if((event.keyCode != 116) && (event.keyCode != 82 && !event.ctrlKey)){
-                    this.socket.emit('typing', {typing:'typing...',socket_id:this.cChat.socket_id});
+                    this.socket.emit('typing', {typing:'نوشتن...',socket_id:this.cChat.socket_id});
                     clearTimeout(this.timeout);
                     this.timeout = setTimeout(this.timeoutFunction, 500);
                 }
@@ -176,7 +176,7 @@ var chatbox = {
         },
         typingListener: function(data){
             if (data.typing && data.to_socket_id == this.cChat.socket_id) {
-                this.typing = "is "+data.typing;
+                this.typing = "در حال "+data.typing;
             } else {
                 this.typing = "";
             }
@@ -238,8 +238,8 @@ var chatbox = {
         <div class="chat_box" v-bind:id="'chatbox-' + cChat.id" style="right:270px">
             <div class="box box-primary direct-chat direct-chat-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{ cChat.name }}</h3> <span>{{ typing }}</span>
-                    <div class="box-tools pull-right">
+                    <h3 class="box-title text-right" style="float: right;margin-right: 60px;">{{ cChat.name }}</h3> <span style="text-align:right;direction:rtl">{{ typing }}</span>
+                    <div class="box-tools pull-left">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" @click="chatBoxMinimize(cChat.id)"><i class="fa fa-minus"></i>
                         </button>
                         <button type="button" class="btn btn-box-tool" @click="chatBoxClose(cChat.id)"><i class="fa fa-times"></i>
@@ -268,7 +268,7 @@ var chatbox = {
                 </div>
                 <div style="display: block;" class="box-footer">
                     <div class="input-group">
-                        <input name="message" v-bind:id="'msginput-' + cChat.id" v-model.trim="message" placeholder="Type Message And Hit Enter" class="form-control" type="text" v-on:keydown="sendMessage($event)">
+                        <input name="message" v-bind:id="'msginput-' + cChat.id" v-model.trim="message" placeholder="پیام..." class="form-control" type="text" v-on:keydown="sendMessage($event)">
                         <span class="input-group-btn">
                             <div class="btn btn-default btn-file">
                                 <i class="fa fa-paperclip"></i>
