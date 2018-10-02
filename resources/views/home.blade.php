@@ -20,6 +20,12 @@
         position: fixed;
         /* bottom: 0px; */
     }
+    .panel-heading{
+        font-weight: bold;
+    }
+    .box-title{
+        font-family: "iranSans";
+    }
     </style>
 @stop
 @section('content')

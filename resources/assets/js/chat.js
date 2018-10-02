@@ -267,14 +267,9 @@ var chatbox = {
                     </div>
                 </div>
                 <div style="display: block;" class="box-footer">
-                    <div class="input-group">
-                        <input name="message" v-bind:id="'msginput-' + cChat.id" v-model.trim="message" placeholder="پیام..." class="form-control" type="text" v-on:keydown="sendMessage($event)">
-                        <span class="input-group-btn">
-                            <div class="btn btn-default btn-file">
-                                <i class="fa fa-paperclip"></i>
-                                <input name="attachment" type="file" v-on:change="file($event)">
-                            </div>
-                        </span>
+                    <div class="input-group" style="display: block;">
+                        <input name="message" v-bind:id="'msginput-' + cChat.id" v-model.trim="message" placeholder="پیام..." class="form-control" type="text" v-on:keydown="sendMessage($event)" style="direction:rtl;">
+                        
                     </div>
                 </div>
             </div>
